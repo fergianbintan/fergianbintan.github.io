@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Fergian Bintan Fahrevy Ramadhan - Document Controller, Informatics Engineering Student, and Data Science Enthusiast." />
+  <title>Fergian Bintan | Document Controller Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-border: rgba(255, 255, 255, 0.14);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --muted-2: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #22c55e;
+      --white: #ffffff;
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+      --radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 32rem),
+        radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.16), transparent 32rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(15, 23, 42, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      width: min(1160px, calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #07111f;
+      box-shadow: 0 14px 40px rgba(56, 189, 248, 0.2);
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .hero {
+      padding: 96px 0 56px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid var(--card-border);
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      background: var(--accent-2);
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12);
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -2.5px;
+      margin-bottom: 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff, #7dd3fc 45%, #86efac);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(18px, 2vw, 22px);
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 32px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 14px;
+      border: 1px solid var(--card-border);
+      color: var(--white);
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0284c7, #22c55e);
+      border: none;
+      color: #07111f;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 740px;
+    }
+
+    .fact {
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid var(--card-border);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 20px;
+    }
+
+    .fact span {
+      display: block;
+      font-size: 13px;
+      color: var(--muted-2);
+      margin-top: 2px;
+    }
+
+    .profile-card {
+      border: 1px solid var(--card-border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.11), rgba(255,255,255,0.05));
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      background: rgba(56, 189, 248, 0.16);
+      border-radius: 50%;
+      top: -110px;
+      right: -100px;
+    }
+
+    .profile-header {
+      position: relative;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+
+    .avatar {
+      width: 82px;
+      height: 82px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #07111f;
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    .profile-header h2 {
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .profile-header p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .profile-list {
+      position: relative;
+      display: grid;
+      gap: 14px;
+    }
+
+    .profile-list div {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .profile-list span {
+      color: var(--muted-2);
+    }
+
+    .profile-list strong {
+      text-align: right;
+    }
+
+    section {
+      padding: 42px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 22px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 3vw, 40px);
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--card-border);
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 16px 50px rgba(0, 0, 0, 0.14);
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .meta {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .card ul {
+      margin-left: 18px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-card {
+      border-left: 4px solid var(--accent);
+    }
+
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.26);
+      color: #e0f2fe;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .project-card {
+      min-height: 100%;
+    }
+
+    .project-tag {
+      display: inline-flex;
+      color: #bbf7d0;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.24);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .contact-item {
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+    }
+
+    .contact-item span {
+      color: var(--muted-2);
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .contact-item a {
+      color: var(--white);
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    .footer {
+      padding: 32px 0 48px;
+      color: var(--muted-2);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .grid-2,
+      .grid-3,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 62px;
+      }
+
+      .profile-list div {
+        display: block;
+      }
+
+      .profile-list strong {
+        display: block;
+        text-align: left;
+        margin-top: 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark">FB</span>
+        <span>Fergian Bintan</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top" class="page">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">
+          <span class="dot"></span>
+          Available for Document Control & Project Support roles
+        </div>
+
+        <h1>
+          Document Controller with <span class="gradient-text">IT & Data Mindset</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          I am Fergian Bintan Fahrevy Ramadhan, an Informatics Engineering student based in Batam with experience in document control, logistics operations, reporting, and data management. I help project teams keep documents accurate, traceable, updated, and ready for execution or audit requirements.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:fergianbintan2002@gmail.com">Contact Me</a>
+          <a class="btn" href="Fergian_Bintan_Resume.pdf" target="_blank">Download Resume</a>
+          <a class="btn" href="https://www.linkedin.com/in/fergian-bintan-837509420/" target="_blank">View LinkedIn</a>
+        </div>
+
+        <div class="quick-facts">
+          <div class="fact">
+            <strong>3.60 / 4.00</strong>
+            <span>Current GPA</span>
+          </div>
+          <div class="fact">
+            <strong>Document Control</strong>
+            <span>Project documentation focus</span>
+          </div>
+          <div class="fact">
+            <strong>Batam</strong>
+            <span>Open to Singapore & Asia roles</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <div class="profile-header">
+          <div class="avatar">FB</div>
+          <div>
+            <h2>Fergian Bintan Fahrevy Ramadhan</h2>
+            <p>Document Controller | Informatics Engineering</p>
+          </div>
+        </div>
+
+        <div class="profile-list">
+          <div>
+            <span>Location</span>
+            <strong>Batam, Riau Islands</strong>
+          </div>
+          <div>
+            <span>Email</span>
+            <strong>fergianbintan2002@gmail.com</strong>
+          </div>
+          <div>
+            <span>Phone</span>
+            <strong>+62 831 7039 6132</strong>
+          </div>
+          <div>
+            <span>Portfolio</span>
+            <strong>fergianbintan.github.io</strong>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-desc">
+            A focused professional profile for engineering, project documentation, logistics operations, and data-driven work environments.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Professional Summary</h3>
+          <p>
+            I have a strong foundation in document control, quality documentation, and logistics operations. My work experience includes managing controlled documents, maintaining revision records, distributing documents to authorized personnel, monitoring work requests, and preparing operational reports.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Career Direction</h3>
+          <p>
+            I am building my career toward Project Document Control, Engineering Documentation, Project Support, and data-driven operations. My background in Informatics Engineering helps me work with structured data, digital tools, process documentation, and continuous improvement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Work Experience</h2>
+          <p class="section-desc">
+            Practical experience in documentation, operations, reporting, coordination, and controlled information flow.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="card timeline-card">
+          <h3>Document Control</h3>
+          <div class="meta">PT. Nexelite CP Indonesia · Batam · Nov 2025 - Jul 2026</div>
+          <ul>
+            <li>Managed and organized controlled documents to support project and quality documentation processes.</li>
+            <li>Ensured documents were properly labeled, updated, stored, distributed, and retrieved when needed.</li>
+            <li>Maintained revision history and version control to prevent the use of outdated or unauthorized documents.</li>
+            <li>Supported compliance with documentation standards, project requirements, and audit readiness.</li>
+          </ul>
+        </div>
+
+        <div class="card timeline-card">
+          <h3>Dispatcher Processing</h3>
+          <div class="meta">PT. Gracia Mandiri Ekspedisi · Batam · Feb 2022 - Nov 2023</div>
+          <ul>
+            <li>Received, recorded, classified, and prioritized work requests or operational reports.</li>
+            <li>Verified initial data completeness and validity before task distribution.</li>
+            <li>Monitored work progress until completion and escalated issues when needed.</li>
+            <li>Documented operational activities and prepared reports to support workflow visibility.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Education & Organization</h2>
+          <p class="section-desc">
+            Academic foundation in Informatics Technology with active student organization experience.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3>Bachelor of Informatics Technology</h3>
+          <div class="meta">Universitas Ibnu Sina · Batam · Aug 2023 - Aug 2027</div>
+          <p>
+            Current GPA: 3.60 / 4.00. Relevant interests include programming, data science, access networks, structured documentation, and digital process improvement.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>HMTI Member</h3>
+          <div class="meta">Informatics Engineering Student Association · Oct 2023 - Present</div>
+          <p>
+            Active member supporting seminars, workshops, IT competitions, student activities, documentation, event coordination, and team-based organizational programs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Core Skills</h2>
+          <p class="section-desc">
+            A balanced skill set for project documentation, operations support, technical administration, and entry-level data science.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="skills-wrap">
+          <span class="skill">Document Control</span>
+          <span class="skill">Document Management</span>
+          <span class="skill">Revision Control</span>
+          <span class="skill">Quality Documentation</span>
+          <span class="skill">SOP / WI / ITP</span>
+          <span class="skill">Data Management</span>
+          <span class="skill">Operational Reporting</span>
+          <span class="skill">Microsoft Office 365</span>
+          <span class="skill">Data Science Fundamental</span>
+          <span class="skill">GitHub</span>
+          <span class="skill">Kaggle</span>
+          <span class="skill">Kedro</span>
+          <span class="skill">Team Coordination</span>
+          <span class="skill">Communication</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Portfolio Focus</h2>
+          <p class="section-desc">
+            Use this section to show HR that your experience can support project teams, controlled documentation, and digital workflow improvement.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card project-card">
+          <span class="project-tag">Document Control</span>
+          <h3>Controlled Document Register</h3>
+          <p>
+            Experience maintaining controlled document information, revision status, file organization, document storage, and retrieval for project or quality requirements.
+          </p>
+        </div>
+
+        <div class="card project-card">
+          <span class="project-tag">Operations</span>
+          <h3>Workflow Monitoring & Reporting</h3>
+          <p>
+            Experience monitoring work progress, following up operational tasks, validating data, escalating issues, and preparing reports for operational visibility.
+          </p>
+        </div>
+
+        <div class="card project-card">
+          <span class="project-tag">Data Science</span>
+          <h3>Learning Path: Data Tools</h3>
+          <p>
+            Developing foundational knowledge in data science through Kaggle, GitHub, and Kedro to improve analytical thinking and structured project workflows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Contact</h2>
+          <p class="section-desc">
+            Open to Document Controller, Project Document Controller, Project Support, and Operations Administration opportunities.
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-box">
+        <div class="contact-item">
+          <span>Email</span>
+          <a href="mailto:fergianbintan2002@gmail.com">fergianbintan2002@gmail.com</a>
+        </div>
+
+        <div class="contact-item">
+          <span>LinkedIn</span>
+          <a href="https://www.linkedin.com/in/fergian-bintan-837509420/" target="_blank">linkedin.com/in/fergian-bintan-837509420</a>
+        </div>
+
+        <div class="contact-item">
+          <span>GitHub Portfolio</span>
+          <a href="https://fergianbintan.github.io" target="_blank">fergianbintan.github.io</a>
+        </div>
+
+        <div class="contact-item">
+          <span>Location</span>
+          <a href="#">Batam, Riau Islands, Indonesia</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2026 Fergian Bintan Fahrevy Ramadhan. Built for professional portfolio and recruitment visibility.
+  </footer>
+</body>
+</html>
