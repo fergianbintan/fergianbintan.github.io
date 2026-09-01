@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Fergian Bintan Fahrevy Ramadhan - Document Controller, Informatics Engineering Student, and Data Science Enthusiast." />
-  <title>Fergian Bintan | Document Controller Portfolio</title>
+  <meta name="description" content="Portfolio of Fergian Bintan Fahrevy Ramadhan - IT Support Specialist, Web Developer, Document Control Specialist, and Informatics Engineering Student." />
+  <title>Fergian Bintan Fahrevy Ramadhan | IT Support & Web Developer Portfolio</title>
 
   <style>
     :root {
@@ -239,12 +239,20 @@
       width: 82px;
       height: 82px;
       border-radius: 24px;
+      overflow: hidden;
       display: grid;
       place-items: center;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       color: #07111f;
       font-size: 28px;
       font-weight: 900;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .profile-header h2 {
@@ -452,7 +460,37 @@
         margin-top: 4px;
       }
     }
-  </style>
+  
+.tool-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:16px;
+}
+.tool-card{
+  background:rgba(255,255,255,0.06);
+  border:1px solid var(--card-border);
+  border-radius:18px;
+  padding:18px 12px;
+  text-align:center;
+  transition:.25s ease;
+}
+.tool-card:hover{
+  transform:translateY(-5px);
+  background:rgba(255,255,255,0.1);
+}
+.tool-card img{
+  width:45px;
+  height:45px;
+  object-fit:contain;
+  margin-bottom:10px;
+}
+.tool-card span{
+  display:block;
+  color:var(--muted);
+  font-size:14px;
+  font-weight:700;
+}
+</style>
 </head>
 
 <body>
@@ -466,8 +504,9 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+        <a href="#hard-skills">Skills</a>
+        <a href="#projects">Focus</a>
+         <a href="#featured-projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -478,15 +517,15 @@
       <div>
         <div class="eyebrow">
           <span class="dot"></span>
-          Available for Document Control & Project Support roles
+          Available for IT Support, Web Development, Document Control & Project Support roles
         </div>
 
         <h1>
-          Document Controller with <span class="gradient-text">IT & Data Mindset</span>
+          IT Professional with <span class="gradient-text">Web Development & Document Control Experience</span>
         </h1>
 
         <p class="hero-subtitle">
-          I am Fergian Bintan Fahrevy Ramadhan, an Informatics Engineering student based in Batam with experience in document control, logistics operations, reporting, and data management. I help project teams keep documents accurate, traceable, updated, and ready for execution or audit requirements.
+          I am Fergian Bintan Fahrevy Ramadhan, an Informatics Engineering student based in Batam with experience in web development, IT support, document control, logistics operations, reporting, and data management. I build digital solutions while helping teams manage structured information and improve operational workflows.
         </p>
 
         <div class="cta-row">
@@ -513,10 +552,10 @@
 
       <aside class="profile-card">
         <div class="profile-header">
-          <div class="avatar">FB</div>
+          <div class="avatar"><img src="assets/profile/profile.jpg" alt="Fergian Bintan Fahrevy Ramadhan Profile"></div>
           <div>
             <h2>Fergian Bintan Fahrevy Ramadhan</h2>
-            <p>Document Controller | Informatics Engineering</p>
+            <p>IT Support | Web Developer | Document Control Specialist</p>
           </div>
         </div>
 
@@ -632,32 +671,95 @@
       </div>
     </section>
 
-    <section id="skills">
+    <section id="soft-skills">
       <div class="section-head">
         <div>
-          <h2 class="section-title">Core Skills</h2>
+          <h2 class="section-title">Soft Skills</h2>
           <p class="section-desc">
-            A balanced skill set for project documentation, operations support, technical administration, and entry-level data science.
+            Professional strengths that support effective communication, collaboration, problem-solving, and performance in dynamic work environments.
           </p>
         </div>
       </div>
 
       <div class="card">
         <div class="skills-wrap">
+          <span class="skill">Communication</span>
+          <span class="skill">Team Collaboration</span>
+          <span class="skill">Problem Solving</span>
+          <span class="skill">Attention to Detail</span>
+          <span class="skill">Time Management</span>
+          <span class="skill">Adaptability</span>
+          <span class="skill">Critical Thinking</span>
+          <span class="skill">Task Prioritization</span>
+          <span class="skill">Cross-functional Coordination</span>
+          <span class="skill">Organizational Skills</span>
+          <span class="skill">Analytical Thinking</span>
+          <span class="skill">Responsibility</span> 
+        </div>
+      </div>
+    </section>
+
+        <section id="hard-skills">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Hard Skills</h2>
+          <p class="section-desc">
+            A combination of software development, IT support, document control, and operational technology skills.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="skills-wrap">
+          <span class="skill">PHP</span>
+          <span class="skill">HTML</span> 
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Bootstrap</span>
+          <span class="skill">MySQL</span>
+          <span class="skill">Web Development</span>
+          <span class="skill">Database Management</span>
           <span class="skill">Document Control</span>
           <span class="skill">Document Management</span>
           <span class="skill">Revision Control</span>
           <span class="skill">Quality Documentation</span>
           <span class="skill">SOP / WI / ITP</span>
-          <span class="skill">Data Management</span>
-          <span class="skill">Operational Reporting</span>
-          <span class="skill">Microsoft Office 365</span>
-          <span class="skill">Data Science Fundamental</span>
-          <span class="skill">GitHub</span>
-          <span class="skill">Kaggle</span>
-          <span class="skill">Kedro</span>
-          <span class="skill">Team Coordination</span>
-          <span class="skill">Communication</span>
+          <span class="skill">Document Tracking</span>
+           <span class="skill">Microsoft Office 365</span>
+           <span class="skill">Visual Studio Code</span>
+           <span class="skill">GitHub</span>
+           <span class="skill">Basic Networking</span>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="tools">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Tools & Technologies</h2>
+          <p class="section-desc">
+            Tools and technologies used for software development, productivity, documentation, and IT support activities.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="tool-grid">
+          <div class="tool-card"><img src="assets/tools/vscode.png" alt="Visual Studio Code"><span>Visual Studio Code</span></div>
+          <div class="tool-card"><img src="assets/tools/github.png" alt="GitHub"><span>GitHub</span></div>
+          <div class="tool-card"><img src="assets/tools/xampp.png" alt="XAMPP"><span>XAMPP</span></div>
+          <div class="tool-card"><img src="assets/tools/mysql.png" alt="MySQL"><span>MySQL</span></div>
+          <div class="tool-card"><img src="assets/tools/php.png" alt="PHP"><span>PHP</span></div>
+          <div class="tool-card"><img src="assets/tools/bootstrap.png" alt="Bootstrap"><span>Bootstrap</span></div>
+          <div class="tool-card"><img src="assets/tools/javascript.png" alt="JavaScript"><span>JavaScript</span></div>
+          <div class="tool-card"><img src="assets/tools/html.png" alt="HTML"><span>HTML</span></div>
+          <div class="tool-card"><img src="assets/tools/css.png" alt="CSS"><span>CSS</span></div>
+          <div class="tool-card"><img src="assets/tools/office.png" alt="Microsoft Office 365"><span>Microsoft Office 365</span></div>
+          <div class="tool-card"><img src="assets/tools/canva.png" alt="Canva"><span>Canva</span></div>
+          <div class="tool-card"><img src="assets/tools/packettracer.png" alt="Cisco Packet Tracer"><span>Cisco Packet Tracer</span></div>
+          <div class="tool-card"><img src="assets/tools/windows.png" alt="Windows"><span>Windows</span></div>
+          <div class="tool-card"><img src="assets/tools/phpmyadmin.png" alt="phpMyAdmin"><span>phpMyAdmin</span></div>
         </div>
       </div>
     </section>
@@ -667,34 +769,107 @@
         <div>
           <h2 class="section-title">Portfolio Focus</h2>
           <p class="section-desc">
-            A focused overview of my experience in document control, quality documentation, workflow monitoring, and operational coordination.
+            A showcase of my experience in web development, digital solutions, document control, operational workflows, and technology-driven process improvement.
           </p>
         </div>
       </div>
 
       <div class="grid-3">
         <div class="card project-card">
-          <span class="project-tag">Document Control</span>
-          <h3>Controlled Document Register</h3>
+          <span class="project-tag">💻 Web Development</span>
+          <h3>Web Development & Information Systems</h3>
           <p>
-            Experience maintaining controlled document information, revision status, file organization, document storage, and retrieval for project or quality requirements.
+            Experience developing web-based applications using PHP, MySQL, HTML, CSS, JavaScript, and Bootstrap for information management and operational solutions.
           </p>
         </div>
 
         <div class="card project-card">
-          <span class="project-tag">Operations</span>
-          <h3>Workflow Monitoring & Reporting</h3>
+          <span class="project-tag">📄 Document Control</span>
+          <h3>Professional Document Control</h3>
           <p>
-            Experience monitoring work progress, following up operational tasks, validating data, escalating issues, and preparing reports for operational visibility.
+            Experience managing controlled documents, revision tracking, file organization, document distribution, and quality documentation processes to support operational requirements.
           </p>
         </div>
 
         <div class="card project-card">
-          <span class="project-tag">Data Science</span>
-          <h3>Learning Path: Data Tools</h3>
+          <span class="project-tag">⚙ Operations</span>
+          <h3>Operations Workflow Monitoring</h3>
           <p>
-            Developing foundational knowledge in data science through Kaggle, GitHub, and Kedro to improve analytical thinking and structured project workflows.
+            Experience monitoring operational activities, validating information, coordinating task progress, escalating issues, and preparing reports to improve workflow visibility.
           </p>
+        </div>
+
+        <div class="card project-card">
+          <span class="project-tag">📊 Data & Technology</span>
+          <h3>Data Processing & Technology Exploration</h3>
+          <p>
+            Exploring data processing, analytical workflows, and technology tools to support data-driven decision making and digital solution development.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="featured-projects">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Featured Projects</h2>
+          <p class="section-desc">
+            Real projects showcasing my experience in web development, database systems, and digital solutions.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="card project-card">
+          <img src="assets/projects/dropout.png" alt="Student Dropout Monitoring System" style="width:100%;border-radius:18px;margin-bottom:16px;">
+          <span class="project-tag">🚀 Personal Project</span>
+          <h3>Student Dropout Monitoring System</h3>
+          <p>Web-based system to monitor student development data and support academic decision making.</p>
+          <p><strong>Technology:</strong> PHP, MySQL, Bootstrap, JavaScript</p>
+        </div>
+
+        <div class="card project-card">
+          <img src="assets/projects/library.png" alt="Library Management System" style="width:100%;border-radius:18px;margin-bottom:16px;">
+          <span class="project-tag">📚 Information System</span>
+          <h3>Library Management System</h3>
+          <p>Digital library platform for managing books, members, borrowing records, and transactions.</p>
+          <p><strong>Technology:</strong> PHP, MySQL, Bootstrap</p>
+        </div>
+
+        <div class="card project-card">
+          <img src="assets/projects/dashboard.png" alt="Personal Dashboard Project" style="width:100%;border-radius:18px;margin-bottom:16px;">
+          <span class="project-tag">📊 Dashboard</span>
+          <h3>Personal Project Dashboard</h3>
+          <p>Interactive dashboard concept for organizing technology projects and information.</p>
+          <p><strong>Technology:</strong> HTML, CSS, JavaScript</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Certificates</h2>
+          <p class="section-desc">
+            Professional certificates supporting technical growth and career development.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card project-card">
+          <img src="assets/certificates/AI.png" alt="Artificial Intelligence Certificate" style="width:100%;border-radius:18px;margin-bottom:16px;">
+          <span class="project-tag">🏆 Certificate</span>
+          <h3>Artificial Intelligence</h3>
+          <p>MySkill Professional Skill Certificate</p>
+        </div>
+
+        <div class="card project-card">
+          <img src="assets/certificates/Microsoft.png" alt="Microsoft Office Certificate" style="width:100%;border-radius:18px;margin-bottom:16px;">
+          <span class="project-tag">🏆 Certificate</span>
+          <h3>Microsoft Office 365 Training</h3>
+          <p>Professional productivity tools training certificate.</p>
         </div>
       </div>
     </section>
@@ -723,6 +898,11 @@
         <div class="contact-item">
           <span>GitHub Portfolio</span>
           <a href="https://fergianbintan.github.io" target="_blank">fergianbintan.github.io</a>
+        </div>
+
+        <div class="contact-item">
+          <span>WhatsApp</span>
+          <a href="https://wa.me/6283170396132" target="_blank">+62 831 7039 6132</a>
         </div>
 
         <div class="contact-item">
